@@ -13,3 +13,8 @@ for file in ${files}; do
   echo "       Copying misc/paas/heroku/`basename $file`"
   cp -r $file $1/
 done
+
+echo "       Touching Gemfile to fool bundler"
+sleep 1
+touch $1/Gemfile
+ls -l $1/Gemfile*
