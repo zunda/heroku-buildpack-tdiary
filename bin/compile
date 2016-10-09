@@ -13,3 +13,6 @@ for file in ${files}; do
   echo "       Copying misc/paas/heroku/`basename $file`"
   cp -r $file $1/
 done
+
+echo "       Overwriting Gemfile with misc/paas/heroku/Gemfile.local"
+mv -f $1/Gemfile.local $1/Gemfile
